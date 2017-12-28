@@ -14,10 +14,6 @@ So, we want to develop common framework that is useful for most of web agencies 
 Jellyfish Deep Zoom has two main parts. 1st one is client side libray(.dll) that can use for Deep Zoom development easily for client side, 2nd one is server side deep zoom slicing application that can use for dynamic generation of deep zoom images and collections.
 
 Jellyfish Deep Zoom was developed by 2ndfactory co., ltd, JAPAN.
-Please see other information at our website.
-
-http://www.2ndfactory.com
-
 We hope that helps !
 
 
