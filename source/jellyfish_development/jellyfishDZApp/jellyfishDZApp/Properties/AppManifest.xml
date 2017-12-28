@@ -1,0 +1,36 @@
+﻿<!-- Silverlight 3 Start -->
+
+<!--<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        EntryPointAssembly="SLOOB"
+        EntryPointType="sloob.app">
+  <Deployment.Parts>
+    </Deployment.Parts>
+
+  <Deployment.ApplicationIdentity>
+
+    <ApplicationIdentity ShortName="Jellyfish SLOOB"
+                         Title="Jellyfish">
+
+      <ApplicationIdentity.Blurb>
+        Deep Zoom ++ : Dynamic Deep Zoom
+      </ApplicationIdentity.Blurb>
+
+    </ApplicationIdentity>
+
+  </Deployment.ApplicationIdentity>
+</Deployment>-->
+
+<!-- Silverlight3 End -->
+
+
+
+<!-- Silverlight2 Start -->
+<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Deployment.Parts>
+  </Deployment.Parts>
+</Deployment>
+<!-- Silverlight2 End -->
+
+

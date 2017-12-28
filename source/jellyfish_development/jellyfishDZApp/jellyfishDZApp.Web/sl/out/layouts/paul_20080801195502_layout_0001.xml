@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Collection MaxLevel="8" TileSize="256" Format="jpg" Quality="0.9499999881" NextItemId="12" xmlns="http://schemas.microsoft.com/deepzoom/2008">
+  <Items>
+    <I Id="0" N="0" IsPath="1" Source="collection_images/0.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="16.04456" X="-12.54431" Y="-2.633146" />
+    </I>
+    <I Id="1" N="1" IsPath="1" Source="collection_images/1.xml">
+      <Size Width="828" Height="452" />
+      <Viewport Width="14.49901" X="-10.33594" Y="-1.994584" />
+    </I>
+    <I Id="2" N="2" IsPath="1" Source="collection_images/2.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="9.595801" X="-6.1071" Y="-0.8248107" />
+    </I>
+    <I Id="3" N="3" IsPath="1" Source="collection_images/3.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="10.23297" X="-5.512617" Y="-0.6577181" />
+    </I>
+    <I Id="4" N="4" IsPath="1" Source="collection_images/4.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="9.925161" X="-4.48474" Y="-0.3781548" />
+    </I>
+    <I Id="5" N="5" IsPath="1" Source="collection_images/5.xml">
+      <Size Width="828" Height="452" />
+      <Viewport Width="6.350897" X="-2.421299" Y="0" />
+    </I>
+    <I Id="6" N="6" IsPath="1" Source="collection_images/6.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="6.293077" X="-1.65307" Y="-0.115719" />
+    </I>
+    <I Id="7" N="7" IsPath="1" Source="collection_images/7.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="6.004611" X="-1.03545" Y="-0.5161287" />
+    </I>
+    <I Id="8" N="8" IsPath="1" Source="collection_images/8.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="6.06297" X="-0.5926256" Y="-0.8340639" />
+    </I>
+    <I Id="9" N="9" IsPath="1" Source="collection_images/9.xml">
+      <Size Width="828" Height="452" />
+      <Viewport Width="4.677642" X="0" Y="-0.9863247" />
+    </I>
+    <I Id="10" N="10" IsPath="1" Source="collection_images/10.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="2.953823" X="-0.2452892" Y="-0.7717414" />
+    </I>
+    <I Id="11" N="11" IsPath="1" Source="collection_images/11.xml">
+      <Size Width="420" Height="315" />
+      <Viewport Width="1.356265" X="-0.3562646" Y="-0.407828" />
+    </I>
+  </Items>
+</Collection>

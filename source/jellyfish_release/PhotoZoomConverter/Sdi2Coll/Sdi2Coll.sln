@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdi2Coll", "Sdi2Coll\Sdi2Coll.csproj", "{BF75EC86-D1DF-4DC5-AD99-D6BB0BBED4F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdi2CollTest", "Sdi2CollTest\Sdi2CollTest.csproj", "{70B18480-C8D0-4050-B278-0CF28D37122C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Img2Sdi", "Img2Sdi\Img2Sdi.csproj", "{20FB6E75-B8CD-4D10-8677-B95F03CAC663}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF75EC86-D1DF-4DC5-AD99-D6BB0BBED4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF75EC86-D1DF-4DC5-AD99-D6BB0BBED4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF75EC86-D1DF-4DC5-AD99-D6BB0BBED4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF75EC86-D1DF-4DC5-AD99-D6BB0BBED4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B18480-C8D0-4050-B278-0CF28D37122C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B18480-C8D0-4050-B278-0CF28D37122C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B18480-C8D0-4050-B278-0CF28D37122C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B18480-C8D0-4050-B278-0CF28D37122C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20FB6E75-B8CD-4D10-8677-B95F03CAC663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20FB6E75-B8CD-4D10-8677-B95F03CAC663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20FB6E75-B8CD-4D10-8677-B95F03CAC663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20FB6E75-B8CD-4D10-8677-B95F03CAC663}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

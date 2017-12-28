@@ -1,0 +1,95 @@
+﻿UseJfサンプルの説明：
+
+/***************************************************************************/
+JFDeepZoomのLoading表示方法：
+
+	１　イベントハンドラの設定。
+	２　JFDeepZoom.Send()メソッドが呼ばれた時に、"Now Loading"など、Loadingで使う処理を記述。
+	３　無事にLoadingが終わると、JFDeepZoomSrcLoadedイベントが呼ばれ、検索したが、検索条件が足りないなどがあって、Srcファイルが存在しない場合、JFDeepZoomSrcIsNullイベントが呼ばれる。
+	４　３の各イベントを使って、ロード完了表示を行う。
+
+
+サンプル（UseJf）では、
+	２として、
+	・ローディング中に表示されるTextBlock＝loading_tb
+	　ローディング中にloading_tbを動かすStoryboard＝loading_sb
+	・ローディング完了で表示するTextBlock＝loadComplete_tb
+	　ローディング完了時に使うStoryboard＝loadComplete_sb
+
+	を定義。
+
+流れとしては、
+	Sendメソッドのコール：
+	　loading_tbを表示し、loading_sbを開始。これはローディングが終わるまでは繰り返しアニメーションする設定にする。
+	　ロードが完了したら、loadComplete_tbを表示し、loadComplete_sbを開始。
+	　loadComplete_sbが完了したら、Visibility.Collapsedに設定。
+
+	※1 上記のTextBlockとStoryboardはすべてPage.xamlに書いていますので、アニメーションや使いたいコントールはxaml上で設定可能です。
+	※2 はじめは表示する必要がないので、Visibility.Collapsedにしておいてください。
+	イベントの設定はコードビハインドに記述します。
+
+
+	１　イベントの設定
+
+	jfd= JFDeepZoom object.
+
+	２　Sendメソッドコール時に、loading_tbを表示させる（Page.xaml.csのsetLoadingメソッド）
+	private void setLoading()
+	{
+	    loading_sb.RepeatBehavior = RepeatBehavior.Forever;
+	    loading_sb.Begin();
+	}
+
+	３・４　ロード完了時：ロード完了と表示（Page.xaml.csのjfd_JFDeepZoomSrcLoadedメソッド）
+	loading_tb.Visibility = Visibility.Collapsed;
+	loadComplete_tb.Visibility = Visibility.Visible;
+	loadComplete_sb.Completed += new EventHandler(loadComplete_sb_Completed);
+	loadComplete_sb.Begin();
+
+	//自身を非表示にする
+	void loadComplete_sb_Completed(object sender, EventArgs e)
+	{
+	    loadComplete_tb.Visibility = Visibility.Collapsed;
+	}
+
+/***************************************************************************/
+receive.aspxで返される<AdditionalData><Thumbnail>ノードの文字列から該当するSubImageのインデックス番号を検索するメソッドと、逆にSubImageのインデックス番号から<Thumbnail>ノードを検索することができるメソッドを作成。
+	メソッド：
+		int ImageNameToIndex(string thumbnailName);
+		thumbnailNameから、該当するMultiScaleSubImageのインデックスを返す。
+	
+		string IndexToImageName(int index);
+		MultiScaleSubImageのインデックスからthumbnailNameを返す。
+		これを使えば、JFDeepZoom外に表示したthumbnailの画像とJFDeepZoom内のMultiScaleSubImageと連動させやすくなる。
+		
+/***************************************************************************/
+[Search API] 
+public void Send(string uri, List<Dictionary><string,string>> dataList, string order, string orderby, string searchType)
+	uriに指定されたファイルへdataListに格納された条件でデータを送信する。
+	Send data to specified uri with parameters within dataList.
+
+	1. string uri 送信先Uri
+
+	2. List<Dictionary><string,string>> dataList
+	検索する文字列。
+	・Listのインデックス一つにつき、1テーブル。
+	・Dictionaryは、table1["【テーブル名】"] = "【値】";
+	の組み合わせ。
+
+	サンプルプログラム（UseJfプロジェクトのPage.xaml.cs　101～113行目）
+
+	//テーブルごとの宣言
+	Dictionary<string, string> table1 = new Dictionary<string, string>();
+
+	//- 検索対象テーブル名と値をセット
+	table1["condition1"] = title_tb.Text;
+
+	//検索データをListに格納
+	dataList.Add(table1);
+
+	//次の値を格納（tagテーブル）
+	Dictionary<string, string> table2 = new Dictionary<string, string>();
+
+	//tagは、現在「,」区切りで複数検索。
+	table2["condition2"] = Regex.Replace(tag_tb.Text, @"(\s)+",",");
+	dataList.Add(table2);

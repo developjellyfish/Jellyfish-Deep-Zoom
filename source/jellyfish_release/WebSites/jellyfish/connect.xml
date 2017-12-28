@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Metadata version="1">
+  <AspectRatio>1.93576388888889</AspectRatio>
+  <Dzcpath>out/collection.xml</Dzcpath>
+  <Image Id="0">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+    <AdditionalData>
+	    <condition1>condition1のデータ</condition1>
+	    <condition2>condition2のデータ</condition2>
+	    <uid>5</uid>
+	    <Date>2008/04/30</Date>
+	    <Owner>Mitsuru</Owner>
+	    <thumbnail>mitsuru/080352322.jpg</thumbnail>
+	    <Share>0</Share>
+    </AdditionalData>
+  </Image>
+  <Image Id="1">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+  <Image Id="2">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+  <Image Id="3">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+    <Date>2008/06/23 12:45</Date>
+    <Author>JFK3</Author>
+  </Image>
+  <Image Id="4">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+  <Image Id="5">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+  <Image Id="6">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+  <Image Id="7">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+  <Image Id="8">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+  <Image Id="9">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+  <Image Id="10">
+    <FileName>D:\Documents\Jellyfish</FileName>
+    <x>0</x>
+    <y>0</y>
+    <Width>2</Width>
+    <Height>1</Height>
+    <ZOrder>1</ZOrder>
+    <Tag>vi</Tag>
+    <!-- additional data -->
+  </Image>
+</Metadata>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DzcConverterImg2Sdi</name>
+    </assembly>
+    <members>
+        <member name="T:DzcConverterImg2Sdi.HeaderBlock">
+            <summary>
+            HeaderBlock Class
+            </summary>
+        </member>
+        <member name="M:DzcConverterImg2Sdi.HeaderBlock.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DzcConverterImg2Sdi.HeaderBlock"/> class.
+            </summary>
+        </member>
+        <member name="M:DzcConverterImg2Sdi.HeaderBlock.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DzcConverterImg2Sdi.HeaderBlock"/> class.
+            </summary>
+            <param name="logicalWidth">Width of the logical.</param>
+            <param name="logicalHeight">Height of the logical.</param>
+        </member>
+        <member name="T:DzcConverterImg2Sdi.LevelBlock">
+            <summary>
+            LevelBlock Class
+            </summary>
+        </member>
+        <member name="M:DzcConverterImg2Sdi.LevelBlock.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DzcConverterImg2Sdi.LevelBlock"/> class.
+            </summary>
+        </member>
+        <member name="M:DzcConverterImg2Sdi.LevelBlock.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DzcConverterImg2Sdi.LevelBlock"/> class.
+            </summary>
+            <param name="levelWidth">Width of the level.</param>
+            <param name="levelHeight">Height of the level.</param>
+            <param name="tileSize">Size of the tile.</param>
+        </member>
+        <member name="T:DzcConverterImg2Sdi.DzcConverterImg2Sdi">
+            <summary>
+            DZC Converter Img2Sdi Class
+            </summary>
+        </member>
+        <member name="M:DzcConverterImg2Sdi.DzcConverterImg2Sdi.WriteImageXml(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Writes the image XML.
+            </summary>
+            <param name="sInputImage">The s input image.</param>
+            <param name="sXmlOutputPath">The s XML output path.</param>
+            <param name="nImageWidth">Width of the n image.</param>
+            <param name="nImageHeight">Height of the n image.</param>
+            <param name="nTileSize">Size of the n tile.</param>
+            <param name="nTileOverlap">The n tile overlap.</param>
+        </member>
+        <member name="M:DzcConverterImg2Sdi.DzcConverterImg2Sdi.Image2Sdi_Beta2(System.String,System.String)">
+            <summary>
+            Create a DZI from an input image file.
+            </summary>
+            <remarks>
+            if the name of a input image file is 'dog.jpg',
+            this method creates 'collection_images/dog.xml' and
+            'collection_images/dog_files/'.
+            </remarks>
+            <param name="sInputImage">The input image.</param>
+            <param name="sXmlOutputPath">The DZI output path.</param>
+        </member>
+        <member name="M:DzcConverterImg2Sdi.DzcConverterImg2Sdi.ScaleImage(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            Scales the image.
+            </summary>
+            <param name="imageSource">The image source.</param>
+            <param name="nScaledWidth">Width of the n scaled.</param>
+            <param name="nScaledHeight">Height of the n scaled.</param>
+            <returns></returns>
+        </member>
+        <member name="M:DzcConverterImg2Sdi.DzcConverterImg2Sdi.WriteLevel(System.Drawing.Bitmap,System.Int32,System.String)">
+            <summary>
+            Writes the level.
+            </summary>
+            <param name="imgLod">The img lod.</param>
+            <param name="nTileSize">Size of the n tile.</param>
+            <param name="sLevelTileFolder">The s level tile folder.</param>
+        </member>
+    </members>
+</doc>

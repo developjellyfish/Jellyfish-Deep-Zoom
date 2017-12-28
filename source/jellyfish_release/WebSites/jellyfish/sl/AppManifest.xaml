@@ -1,0 +1,7 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Usejf" EntryPointType="Usejf.App" RuntimeVersion="2.0.30930.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Usejf" Source="Usejf.dll" />
+    <AssemblyPart x:Name="Jellyfish" Source="Jellyfish.dll" />
+    <AssemblyPart x:Name="System.Xml.Linq" Source="System.Xml.Linq.dll" />
+  </Deployment.Parts>
+</Deployment>

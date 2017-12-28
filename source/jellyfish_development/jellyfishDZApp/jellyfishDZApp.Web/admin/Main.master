@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="admin_Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Jellyfish Deep Zoom - Administration Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            height: 328px;
+        }
+        .style2
+        {
+            width: 100%;
+            height: 3px;
+        }
+        .style3
+        {
+            width: 220px;
+        }
+        .style4
+        {
+            width: 200px;
+        }
+        .style5
+        {
+            width: 150px;
+        height: 594px;
+      }
+        .style6
+        {
+            width: 100%;
+        }
+      .CPH1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	background-color: #181818;
+	font-size: small;
+	font-weight: bold;
+}
+	.menu {
+		color: #34A7ED;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	.basictitle {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+    .boldtitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+	color: #FFE104;
+}
+    </style>
+</head>
+<body id="main_body" runat="server" bgcolor="#181818">
+    <form id="form1" runat="server" class="CPH1">
+    <table class="style2" bgcolor="#181818">
+        <tr>
+            <td class="style3" align="center" style="width: 370px">
+                <span class="boldtitle">Deep Zoom File Administrator</span></td>
+            <td align="right">
+                <span class="basictitle">Login User :  <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label></span>
+                <asp:Button ID="btnLogout" runat="server" Text="Logout" 
+                    onclick="btnLogout_Click" Width="73px" />
+            </td>
+        </tr>
+    </table>
+    <table class="style1">
+        <tr>
+            <td align="center" class="style5" valign="top" width="150" bgcolor="#181818">
+                <table cellpadding="2" class="style6">
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click1" CssClass="menu">Home</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click" CssClass="menu">Upload Image</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton3" runat="server" onclick="LinkButton3_Click" CssClass="menu">Image Manager</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton4" runat="server" onclick="LinkButton4_Click" CssClass="menu">Collection Manager</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton5" runat="server" onclick="LinkButton5_Click" CssClass="menu">Upload Layout</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton6" runat="server" onclick="LinkButton6_Click" CssClass="menu">Layout Manager</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton7" runat="server" onclick="LinkButton7_Click" CssClass="menu">Deep Zoom Viewer</asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </td>
+            <td class="CPH1">
+                <div style="height: 598px; width: auto; overflow:auto;">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    
+                    	<p>x</p>
+                    
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

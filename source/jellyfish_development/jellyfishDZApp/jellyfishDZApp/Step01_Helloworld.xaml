@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="jellyfishDZApp.Step01_Helloworld"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:jf="clr-namespace:Jellyfish.jfDeepZoom;assembly=Jellyfish"
+	Width="800" Height="600">
+    <Grid x:Name="LayoutRoot" Background="Black">
+		<jf:JFDeepZoom x:Name="jfd" Width="800" Height="600" Src="GeneratedImages/dzc_output.xml" />
+    </Grid>
+</UserControl>

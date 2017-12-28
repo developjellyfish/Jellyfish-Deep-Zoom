@@ -1,0 +1,2378 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jellyfish</name>
+    </assembly>
+    <members>
+        <member name="T:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs">
+            <summary>
+            EventArgs for MultiScaleSubImages
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs.#ctor(System.Int32,System.Windows.Controls.MultiScaleImage,System.Windows.Controls.MultiScaleSubImage)">
+            <summary>
+            EventArgs for MultiScaleSubImage
+            </summary>
+            <param name="_id">Index of SubImage</param>
+            <param name="_msi">MultiScaleImage</param>
+            <param name="_mssi">MultiScaleSubImage</param>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs.id">
+            <summary>
+            index of MultiScaleSubImage
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs.msi">
+            <summary>
+            reference to MultiScaleImage
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs.mssi">
+            <summary>
+            reference to MultiScaleSubImage (Event object)
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs.Id">
+            <summary>
+            index of MultiScaleSubImage
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs.Msi">
+            <summary>
+            reference to MultiScaleImage
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs.Mssi">
+            <summary>
+            reference to MultiScaleSubImage (Event object)
+            
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFDeepZoom">
+            <summary>
+            [Interaction Layout]
+            </summary>
+            <summary>
+            [Interaction Utils]
+            </summary>
+            <summary>
+            [Interaction Common]
+            </summary>
+            <summary>
+            [Init]
+            </summary>
+            <summary>
+            [Exception]
+            </summary>
+            <summary>
+            [Communication Semi-Dynamic]
+            </summary>
+            <summary>
+            [SubImage events]
+            </summary>
+            <summary>
+            JFDeepZoom class
+            </summary>
+            <summary>
+            [UserControl]
+            </summary>
+            <summary>
+            [Communication common]
+            </summary>
+            <summary>
+            [Interaction Domethod]
+            </summary>
+            <summary>
+            [Display]
+            </summary>
+            <summary>
+            [MultiSelect]
+            </summary>
+            <summary>
+            [Communication Dynamic]
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.lastMousePos">
+            <summary>
+            current mouse position
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.mouseIsDragging">
+            <summary>
+            if mouse is dragging or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.mouseButtonPressed">
+            <summary>
+            if mouse is dragging or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.dragOffset">
+            <summary>
+            Mouse position of JFDeepZoom_MouseLeftButtonDown
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currentPosition">
+            <summary>
+            msi.ViewportOrigin for Mouse event raising time.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.initViewportWidth">
+            <summary>
+            Default value of ViewportWidth
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.initViewportOrigin">
+            <summary>
+            Default value of ViewportOrigin
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.initSubImageViewportWidth">
+            <summary>
+            Default value of ViewportWidth of SubImage
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.initSubImageViewportOrigin">
+            <summary>
+            Default value of ViewportOrigin of SubImage
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.multiScaleSubImageInitPosition">
+            <summary>
+             Axis List of Initial SubImage
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.startZoom">
+            <summary>
+            the zoom value of before layout
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.isTweening">
+            <summary>
+            If it is tweening or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.isZooming">
+            <summary>
+            If it is zooming or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.isLayoutTweening">
+            <summary>
+            If it is middle of modifing or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.isSlide">
+            <summary>
+            If it is sliding or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.isShow">
+            <summary>
+            Previous next button display or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.endThreshold">
+            <summary>
+            the threshold for layout modifying as completed
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.subImageAnimationTweening">
+            <summary>
+            if animation of subimage is completed or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.zoomTo">
+            <summary>
+            for zoom, rate of change previous and current zooming
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetLayoutSHRINK">
+            <summary>
+            execution for Layout SHRINK
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetLayoutLINE">
+            <summary>
+            execution for Layout LINE
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetLayoutTILE">
+            <summary>
+            execution for Layout TILE
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetLayoutDEFAULT_POSITION">
+            <summary>
+            execution for Layout DEFAULT_POSITION
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetLayoutCUSTOM">
+            <summary>
+            execution for Layout CUSTOM
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetLayoutSPIRAL">
+            <summary>
+            execution for Layout SPIRAL
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetLayoutSNOWCRYSTAL">
+            <summary>
+            execution for Layout SNOWCRYSTAL
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetLayoutSPREAD">
+            <summary>
+            execution for Layout SPREAD
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DefaultPosition">
+            <summary>move to Initioal position
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.PreviousLayoutStyle">
+            <summary>
+            previous layout style
+            line, tile, snowCrystal, spiral, spread, defaultPosition, custom, none
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currentLayoutStyle">
+            <summary>
+            current layout style
+            line, tile, snowCrystal, spiral, spread, defaultPosition, custom, none
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.storyboard_Completed(System.Object,System.EventArgs)">
+            <summary>
+            constant executing, sync layout modifying and check Image position
+            
+            Flow
+             0. it takes position, from each parts
+             1. set appropriate viewportWidth fit into Display area using 0.
+             2. set actual allocation of each parts with 1.
+             3. animated/animate/ using storyboard
+            
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.radiusList">
+            <summary>
+            Value of random angle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.indexIntList">
+            <summary>
+            value of random array Index
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.CheckLayoutStyleInXAML(System.String)">
+            <summary>
+            make sure about value of LayoutStyle is appropriate.
+            </summary>
+            <param name="style">The style.</param>
+            <returns>existing LayoutStyle or not</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.getSubImagePoint(System.Int32)">
+            <summary>
+            get x/y axis of subImage (based on parent MultiscaleImage)
+            </summary>
+            <param name="index">index of MultiScaleSubImage</param>
+            <returns>Point (Unit of pixel)</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.setSubImagePoint(System.Int32,System.Windows.Point)">
+            <summary>
+            set Point of specified Index for SubImage
+            </summary>
+            <param name="index">index of MultiScaleSubImage</param>
+            <param name="inPoint">Point (Unit of pixel)</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.getSubImageWidth(System.Int32)">
+            <summary>
+            get Width of Specified subImage
+            </summary>
+            <param name="index">Index of MultiScaleSubImage</param>
+            <returns>width of subImage (Unit of pixel)</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.getSubImageHeight(System.Int32)">
+            <summary>
+            get Height of Specified subImage
+            </summary>
+            <param name="index">Index of MultiScaleSubImage</param>
+            <returns>height of subImage (Unit of pixel)</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.setSubImageWidth(System.Int32,System.Double)">
+            <summary>
+            set Width of SubImage by Pixel
+            condition: x Axis of subImage must be maintained.
+            </summary>
+            <param name="index">index of MultiScaleSubImage</param>
+            <param name="inPoint">Width (Unit of pixel)</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetZindex(System.Int32)">
+            <summary>
+            set zIndex of subImage to most front
+            </summary>
+            <param name="topIndex">SubImageのIndex</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.getAspectRatio">
+            <summary>
+            get AspectRatio of MultiScaleImage
+            </summary>
+            <returns>AspectRatio of MultiScaleImage</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoSameSizeSubImages(System.Int32)">
+            <summary>
+            change height of all subImage to be same.
+            </summary>
+            <param name="indexSubImage">index of SubImage does set as standard</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SubImageHitTest(System.Windows.Point,System.Int32)">
+            <summary>
+            HitTest MultiScaleSubImage.
+            </summary>
+            <param name="p"> hittest point (element coordinates)</param>
+            <param name="indexSubImage">Index of subImage as search target</param>
+            <returns>is subImage in the Rectangle or not</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.GetSubImageRect(System.Int32)">
+            <summary>
+            Return Rectangle of MultiScaleImage.SubImages.
+            </summary>
+            <param name="indexSubImage">search index of SubImage</param>
+            <returns>Rectangle of MultiScaleImage.SubImages</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.getViewPortWidthForUnifiedHeight(System.Int32)">
+            <summary>
+            viewport width of each subImage when change height of all subImage tobe same as specified index subImage
+            </summary>
+            <param name="indexInt">index does set as standard</param>
+            <returns>List of modified ViewPortWidth of SubImage</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.shuffleList(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Shuffles the list.
+            </summary>
+            <param name="inList">The in list.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Fit">
+            <summary>
+            Fit to MultiScaleImage space according to actual width and height (Instantaneously)
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currentMouseEventType">
+            <summary>
+            set mouse Event type
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.isSelectable">
+            <summary>
+            decide subImage is selectable or not
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.minZoom">
+            <summary>
+            minimum of zoom value.<br />
+            default: 0(unlimited)
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.maxZoom">
+            <summary>
+            maximum of zoom value.<br />
+            default: Double.MaxValue(unlimited)
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.zoomValue">
+            <summary>
+            current zoom. basically 1/msi.ViewportWidth
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.zoomRatio">
+            <summary>
+            zoom level value for "Zoom" method
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currentSlideIndex">
+            <summary>
+            Index value that is using for slideshow
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Reset">
+            <summary>
+            Reset axis and zoom level value
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ResetCoorinates">
+            <summary>
+            Reset axis
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ResetZoom">
+            <summary>
+            Reset zoom level value
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.dt">
+            <summary>
+            DispatcherTimer that execute periodically for using slideshow
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.toggleSlideButton">
+            <summary>
+            Toggles the slide button.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.StartSlideShow">
+            <summary>
+            start SlideShow.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.setDispatcherTimer">
+            <summary>
+            Sets the dispatcher timer.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.dt_Tick(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Tick event of the dt control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.StopSlideShow">
+            <summary>
+            stop SlideShow.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.checkShowSlideButtonZoomValue">
+            <summary>
+            For showing prev / next button, check zoom level value,
+            the button should be displayed
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Zoom(System.Double,System.Windows.Point)">
+            <summary>
+            configure zoom value (zoom coefficient)
+            </summary>
+            <param name="zoom">Ratio of change with previous time</param>
+            <param name="pointToZoom">standard axis for zoom execution</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ZoomByRatio(System.Double,System.Windows.Point)">
+            <summary>
+            configure zoom value(zoom value that would like to change)
+            </summary>
+            <param name="zoom">zoom value that would like to change</param>
+            <param name="pointToZoom">standard axis for zoom execution</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ZoomIn">
+            <summary>
+            ZoomIn using mouse Down Point
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ZoomOut">
+            <summary>
+            ZoomOut using mouse Down Point
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ZoomSingleSubImage(System.Int32)">
+            <summary>
+            stretch specified subImage
+            </summary>
+            <param name="index">Index of SubImage</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Next">
+            <summary>
+            [Zoom] goNext
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Previous">
+            <summary>
+            [Zoom] goPrevious
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDeepZoomChangeStarted(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            Raises the DeepZoomChangeStarted event.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDeepZoomMotionFinished(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            raises the DeepZoomMotionFinished event.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.sb">
+            <summary>
+            storyboard of constant executing, sync layout modifying and check Image position
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.InitStoryboard">
+            <summary>
+            Initialize storyboard of constant executing, sync layout modifying and check Image position
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.StartCheckViewportOrigin">
+            <summary>
+            Begin Storyboard checking ViewportOrigin
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.StopCheckViewportOrigin">
+            <summary>
+            Stop Storyboard checking ViewportOrigin
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.isLoaded">
+            <summary>
+            loading JFDeepzoom or not
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Init">
+            <summary>
+            Initalize.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.InitSubImages">
+            <summary>
+            Initialize SubImage
+            Before position "Default Position"
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Event handler for Loaded event of the JFDeepZoom.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.msi_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Event handler for the Loaded event of the msi.
+            </summary>
+            <param name="sender">sender of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Syncronizing">
+            <summary>
+            implementing JFDeepZoom_SizeChanged
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.GetMultiScaleSubImage(System.Int32)">
+            <summary>
+            return reference to specified MultiScaleSubImage.
+            </summary>
+            <param name="index">index</param>
+            <exception cref="T:Jellyfish.jfDeepZoom.JFDeepZoomSubImageException">this exception is called if you specify index that is out of range.</exception>
+            <returns>references to specified MultiScaleSubImage</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.GetMultiScaleSubImageGroup(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            return references to specified MultiScaleSubImage<br/>
+            [multiple]
+            </summary>
+            <param name="indecies">indecies</param>
+            <exception cref="T:Jellyfish.jfDeepZoom.JFDeepZoomSubImageException">this exception is called if you specify index that is out of range.</exception>
+            <returns>references to specified MultiScaleSubImage as List</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.GetMultiScaleSubImageIndex(System.Int32)">
+            <summary>
+            return reference to specified MultiScaleSubImage by indecies.
+            </summary>
+            <param name="index">index</param>
+            <exception cref="T:Jellyfish.jfDeepZoom.JFDeepZoomSubImageException">this exception is called if you specify index that is out of range.</exception>
+            <returns>references to specified MultiScaleSubImage</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.GetMultiScaleSubImagesIndices(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            return references to specified MultiScaleSubImage by indecies.<br/>
+            [multiple]
+            </summary>
+            <param name="indecies">indecies</param>
+            <exception cref="T:Jellyfish.jfDeepZoom.JFDeepZoomSubImageException">this exception is called if you specify index that is out of range.</exception>
+            <returns>references to specified MultiScaleSubImage as List</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.judgeInRangeSubImage(System.Int32)">
+            <summary>
+            deside there is subimage Index or not.
+            </summary>
+            <param name="index">Index of SubImage</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.judgeInIndices(System.Int32)">
+            <summary>
+            Decide SubImage with specified index is include Indices or not.
+            </summary>
+            <param name="index">SubImageのIndex</param>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currSemiDynamicExecType">
+            <summary>
+            Current semiDynamic approach type.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.semiDynamicColList">
+            <summary>
+            List of collection and layout that get from server with SemiDynamic approach.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.newLayoutViewportList">
+            <summary>
+            Custom layout information with SemiDynamic.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currentCid">
+            <summary>
+            Current CollectionID.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currentLid">
+            <summary>
+            Current LayoutID.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currentSemiDynamicCollection">
+            <summary>
+            Selected list collection information. (with SemiDynamic)
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDownloadSemiDynamicListCompleted(Jellyfish.jfDeepZoom.JFCommunicationEventArgs)">
+            <summary>
+            It raises when load the "List" of SemiDynamic is completed.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFSemiDynamicLayoutChangeCompleted(Jellyfish.jfDeepZoom.JFCommunicationEventArgs)">
+            <summary>
+            It raises when load the "Custom Layout" of SemiDynamic is completed.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RetrieveCollectionList(System.String)">
+            <summary>
+            [Semi-Dynamic] Communicate as LIST.
+            </summary>
+            <param name="uri">Uri of API</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RetrieveCollectionInit(System.String,System.Int32)">
+            <summary>
+            [Semi-Dynamic] Communicate as INIT.
+            </summary>
+            <param name="uri">Uri of API</param>
+            <param name="selectionIndex">selectedIndex of "List" of SemiDynamic</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RetrieveInitChangeOrder(System.String)">
+            <summary>
+            [SemiDynamic] Change order of dzc in INIT.
+            </summary>
+            <param name="uri">Uri of API</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RetrieveLayoutChange(System.String)">
+            <summary>
+            [SemiDynamic] Execute changing layout.
+            </summary>
+            <param name="uri">Uri of API</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RetrieveCollectionLayout(System.String,System.String)">
+            <summary>
+            [SemiDynamic] Execute changing layout.
+            </summary>
+            <param name="uri">Uri of API</param>
+            <param name="lid">LayoutID</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SemiDynamicListStringCompleted(System.String)">
+            <summary>
+            [SemiDynamic] It called, When the communication for semidynamic approach of LIST is completed.
+            </summary>
+            <param name="xmlstr">receive XML</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SemiDynamicInitStringCompleted(System.String)">
+            <summary>
+            [SemiDynamic] It called, When the communication for semidynamic approach of INIT is completed.
+            (load Metainfo)
+            </summary>
+            <param name="xmlstr">receive XML</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SemiDynamicInitStringCompleted2(System.String)">
+            <summary>
+            [SemiDynamic] Continuation of semidynamic approach of INIT.
+            (Change order ThumbnailList, ascending order in DZC)
+            </summary>
+            <param name="xmlstr">receive XML</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SemiDynamicLayoutStringCompleted(System.String)">
+            <summary>
+            [SemiDynamic] Continuation of semidynamic approach of LAYOUT.
+            </summary>
+            <param name="xmlstr">receive XML</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SemiDynamicChangeLayoutStringCompleted(System.String)">
+            <summary>
+            [SemiDynamic] Continuation of semidynamic approach of LAYOUT.
+            （Load dzcPath in XML as string, and layout by client side.）
+            </summary>
+            <param name="xmlstr">receive XML</param>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.disappearList">
+            <summary>
+            Disable List for Client Side Filtering
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.appearList">
+            <summary>
+            Disable List for Client Side Filtering
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.useOpacityAnimation">
+            <summary>
+            Apply opacity process or not for Client Side Filtering
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.mw">
+            <summary>
+            Object that get MouseWheelEvent
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.mouseDownPoint">
+            <summary>
+            The last axis with MouseDown
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.delimMouseDown">
+            <summary>
+            Decision valiable for which click or Drag.
+            If mouseMove amount between 1st click and 2nd click, was less then define px, "click".
+            Otherwise "Drag".
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.subImageState">
+            <summary>
+            State of SubImage
+            true -> MouseEnter
+            false -> MouseLeave
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.multiScaleSubImageInitViewportWidth">
+            <summary>
+            Initial value of ViewportWidth in MultiScaleSubImage
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.InitMouseEvent">
+            <summary>
+            Init the MouseEvent.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.AddDefaultMouseFunc">
+            <summary>
+            Wrap Standard method of MultiScaleImage
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RemoveDefaultMouseFunc">
+            <summary>
+            Unwrap Standard method of MultiScaleImage
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnMultiScaleSubImageMouseEnter(Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs)">
+            <summary>
+            It raises when MouserEnter in paticular MultiScaleSubImage.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnMultiScaleSubImageMouseMove(Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs)">
+            <summary>
+            It raises when MouseMove in paticular MultiScaleSubImage.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnMultiScaleSubImageMouseLeftButtonDown(Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs)">
+            <summary>
+            It raises when MouseLeftButtonDown in paticular MultiScaleSubImage.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnMultiScaleSubImageMouseLeftButtonUp(Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs)">
+            <summary>
+            It raises when MouseLeftButtonUp in paticular MultiScaleSubImage.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnMultiScaleSubImageMouseLeave(Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs)">
+            <summary>
+            It raises when MouseLeave in paticular MultiScaleSubImage.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnMultiScaleSubImageTick(Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs)">
+            <summary>
+            The method is raised, When it is auto playing slideshow, event is raised just before moving.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.MultiScaleSubImageEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnOpacity0Completed(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            The method is raised, when subImage is disable with opecity 0, Event that is raised .
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_MouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            SubImage [MouseLeftButtonUp]
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_MouseLeave(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            SubImage [MouseLeave]
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_MouseLeftButtonDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            SubImage [MouseLeftButtonDown]
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseButtonEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_MouseEnter(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            checking subimage events.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_Moved(System.Object,Jellyfish.jfDeepZoom.MouseWheelEventArgs)">
+            <summary>
+            changing Zoom when mousewheel move.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.MouseWheelEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_MouseMove(System.Object,System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Drag Deepzoom Object.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.MouseEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.msi_MotionFinished_event(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            When Movement like "DoFit" Done, process that is for raising event as same as 
+            complete event in "DoLine"
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.msi_ImageOpenFailed(System.Object,System.Windows.ExceptionRoutedEventArgs)">
+            <summary>
+            Event handler for ImageOpenFailed event of the msi control.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.ExceptionRoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.msi_ImageOpenSucceeded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Event handler for ImageOpenSucceeded event of the msi control.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_Opacity0(System.Object,Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            Event handler for opacity process completion for filtering
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.GoFarAway">
+            <summary>
+            blow far away
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Indices_CollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            If Indices value is changing, execute filtering action.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Collections.Specialized.NotifyCollectionChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.AnimateOpacity">
+            <summary>
+            Opacity process
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoFiltering">
+            <summary>
+            Filtering action
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoom_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Syncronizing Canvas and MultiScaleImage size.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.SizeChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.LayoutRoot">
+            <summary>
+            LayoutRoot canvas.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.topCanvas">
+            <summary>
+            Root of JFDeepZoom
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.foregroundCanvas">
+            <summary>
+            foreground Canvas of JFDeepZoom
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.backgroundCanvas">
+            <summary>
+            background Canvas of JFDeepZoom
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.fCanvas">
+            <summary>
+            temp variable for configuring ForeGround Canvas before JFDeepZoom loading.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.bCanvas">
+            <summary>
+            temp variable for configuring BackGround Canvas before JFDeepZoom loading.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.msi">
+            <summary>
+            reference of MultiScaleImage for JFDeepZoom
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.InitCanvas">
+            <summary>
+            init of Canvas
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.showSlideButtonZoomValue">
+            <summary>
+             the threshold for display Next/Previous button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.previousButton">
+            <summary>
+            Previous Button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.nextButton">
+            <summary>
+            Next Button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.previousButtonTemplate">
+            <summary>
+            Template of Previous Button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.nextButtonTemplate">
+            <summary>
+            Template of Next Button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.TopCanvasPreviousButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Event Handles for Click event of the TopCanvasPreviousButton.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.TopCanvasNextButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Event Handles for Click event of the TopCanvasNextButton.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDeepZoomPrevious(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            It raises when click the Previous Button.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDeepZoomNext(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            It calls when click the Next Button.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.detailData">
+            <summary>
+            XML of Matainfo Data
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.isMsiLoaded">
+            <summary>
+            MultiScaleImage is loaded or not.
+            </summary>
+            
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.src">
+            <summary>
+            Uri for dzc of MultiScaleImage.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetSrc(System.String)">
+            <summary>
+            If CurrentApproachType is SEMI_DYNAMIC or DYNAMIC ApproachType,
+            you have to use method to set Source
+            </summary>
+            <param name="collectionPath">path of dzc</param>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.currentApproachType">
+            <summary>
+            Getter / Setter for the type of the current approach(e.g. "Static", "Semi-Dynamic", "Dynamic").
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.ThumbnailList">
+            <summary>
+            List of thumbnail images.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.wc">
+            <summary>
+            WebClient
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.InitCommunicationEvent">
+            <summary>
+            Initialize communication event. 
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDeepZoomSrcLoaded(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            It raises when Source of MultiScaleImage is set and file loading is completed.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDeepZoomSrcIsNull(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            This event is raised if Src property is null.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDeepZoomSrcIsOverLimit(Jellyfish.jfDeepZoom.JFCommunicationErrorEventArgs)">
+            <summary>
+            This event is raised if Src property exceeds the limit.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationErrorEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.wc_UploadStringCompleted(System.Object,System.Net.UploadStringCompletedEventArgs)">
+            <summary>
+            Event handler for UploadStringCompleted event.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Net.UploadStringCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.wc_UploadProgressChanged(System.Object,System.Net.UploadProgressChangedEventArgs)">
+            <summary>
+            Event handler for UploadProgressChanged event.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Net.UploadProgressChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.wc_OpenReadCompleted(System.Object,System.Net.OpenReadCompletedEventArgs)">
+            <summary>
+            Event handler for OpenReadCompleted event.
+            
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Net.OpenReadCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.wc_OpenWriteCompleted(System.Object,System.Net.OpenWriteCompletedEventArgs)">
+            <summary>
+            Event handler for OpenWriteCompleted event.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Net.OpenWriteCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.wc_DownloadProgressChanged(System.Object,System.Net.DownloadProgressChangedEventArgs)">
+            <summary>
+            Event handler for DownloadProgressChanged event.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Net.DownloadProgressChangedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.wc_DownloadStringCompleted(System.Object,System.Net.DownloadStringCompletedEventArgs)">
+            <summary>
+            Event handler for DownloadStringCompleted event.
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The <see cref="T:System.Net.DownloadStringCompletedEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.getFilteringUIdList">
+            <summary>
+            Get the filteringUid list.
+            </summary>
+            <returns>Filtered UID list</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.getUIdListFromMetaInfo">
+            <summary>
+            Get the Uid List in the MetaInfo.
+            </summary>
+            <returns>Uid List in the MetaInfo</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.getSidLFromMetaInfo">
+            <summary>
+            Get the Sid List in the MetaInfo.
+            </summary>
+            <returns>Sid List in the MetaInfo</returns>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.sendFullUri">
+            <summary>
+            parameterized Uri
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDownloadStringCompleted(Jellyfish.jfDeepZoom.JFCommunicationEventArgs)">
+            <summary>
+            It raises when DownloadStringCompleted event of the WebClient.
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFDownloadProgressChanged(Jellyfish.jfDeepZoom.JFCommunicationEventArgs)">
+            <summary>
+            It raises the DownloadProgressChanged event of the WebClient
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFOpenReadCompleted(Jellyfish.jfDeepZoom.JFCommunicationEventArgs)">
+            <summary>
+            It raises the OpenReadCompleted event of the WebClient
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFOpenWriteCompleted(Jellyfish.jfDeepZoom.JFCommunicationEventArgs)">
+            <summary>
+            It raises the OpenWriteCompleted event of the WebClient
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFUploadProgressChanged(Jellyfish.jfDeepZoom.JFCommunicationEventArgs)">
+            <summary>
+            It raises the UploadProgressChanged event of the WebClient
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFUploadStringCompleted(Jellyfish.jfDeepZoom.JFCommunicationEventArgs)">
+            <summary>
+            It raises the UploadStringCompleted event of the WebClient
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.GetSubImageData(System.Int32,System.String)">
+            <summary>
+            It takes MetaInfo data related to SubImage.
+            </summary>
+            <param name="id">Index of SubImage</param>
+            <param name="tagName">Element name</param>
+            <returns>MetaInfo data related to SubImage</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.doGetSubImageData(System.Int32,System.String)">
+            <summary>
+            It takes MetaInfo data related to SubImage.
+            </summary>
+            <param name="id">Index of SubImage</param>
+            <param name="tagName">Element name</param>
+            <returns>MetaInfo data related to SubImage</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.doGetDZCPath">
+            <summary>
+            Get the DZCPath
+            </summary>
+            <returns>*.dzcPath</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ImageNameToIndex(System.String)">
+            <summary>
+            Convert thumbnail element to index of SubImage and return, return -1, if it is not.
+            </summary>
+            <param name="imageName">Thumbnail element</param>
+            <returns>Index of SubImage</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.IndicesToThumbnailList">
+            <summary>
+            Regenerate ThumbnailList from Indices.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ChangeIndicesToThumbnail(System.Int32)">
+            <summary>
+            Return index of SubImages which converted JFTthumbnailList type.  
+            </summary>
+            <param name="index">Index of SubImage</param>
+            <returns>Type of JFThumbnailList</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.IndexToImageName(System.Int32)">
+            <summary>
+            Return index of SubImages which converted Thumbnail file name
+            return "", if it is not. 
+            </summary>
+            <param name="imageName">Index of SubImage</param>
+            <returns>ThumbnailPath of SubImage</returns>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.lineTileSpace">
+            <summary>
+            Margin that is used "Line" Layout and "Tile" Layout
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.lineTileBasisIndex">
+            <summary>
+            lineTileBasisIndex Default value is 0
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.tileBasisRatio">
+            <summary>
+            the Default value of tileBasisRatio is 4
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoLine">
+            <summary>
+            Execution of line layout 
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoTile">
+            <summary>
+            Execution of tile layout 
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoSnowCrystal">
+            <summary>
+            Execution of snow cristal layout 
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoSpiral">
+            <summary>
+            Execution of spiral layout 
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoSpread">
+            <summary>
+            Execution of random spread layout 
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoFit">
+            <summary>
+            Fit to MultiScaleImage space according to actual width and height.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoCustomLayout">
+            <summary>
+            Execution of custom layout (use only Semi-Dynamic)
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoShrink">
+            <summary>
+            Execution of shrink layout 
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoFinishLayoutCommon">
+            <summary>
+            it called after the layout processing is completed
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DoSlideShow">
+            <summary>
+            Execution of slide show 
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.indices">
+            <summary>
+            Display Indeices
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.InitIndices">
+            <summary>
+            Initialize Indices
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.AddIndex(System.Int32)">
+            <summary>
+            Add index into Indices
+            </summary>
+            <param name="subImageIndex"></param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RemoveIndexAt(System.Int32)">
+            <summary>
+            remove index at specified position.
+            </summary>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RemoveSubImageIndex(System.Int32)">
+            <summary>
+            If specified index of SubImage is existed, removed it.
+            </summary>
+            <param name="subImageIndex">Index of the sub image.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ConvertSubImageIndexToIndex(System.Int32)">
+            <summary>
+            Converts the index of the subImage to Indices.
+            </summary>
+            <param name="subImageIndex">Index of the subImage.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnFilterCompleted(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            It raises when Filter animation is completed
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Sort(System.String)">
+            <summary>
+            sort by index of SubImageのindex
+            </summary>
+            <param name="orderBy">ASC or DESC</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Sort(System.String,System.String)">
+            <summary>
+            Sorting
+            </summary>
+            <param name="orderBy">"asc" or "desc"</param>
+            <param name="key">target key </param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Reverse">
+            <summary>
+            Reverses Indices.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Filter(Jellyfish.jfDeepZoom.FilterObject)">
+            <summary>
+            only 1 filter value
+            </summary>
+            <param name="condition">
+            FilterKey: key for filtering
+            FilterValue: value for Filtering.
+            </param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Filter(System.Collections.Generic.List{Jellyfish.jfDeepZoom.FilterObject},System.String)">
+            <summary>
+            Filtering (2 or more filtering)
+            </summary>
+            <param name="conditions">
+            FilterKey: key for filtering
+            FilterValue: value for Filtering.
+            </param>
+            <param name="searchCondition">
+            Search with condition
+            "and"
+            "or"
+            e.g. A and B and C / A or B or C
+            </param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.CommaSeparatedStrToList(System.String)">
+            <summary>
+            Return List&lt;string&gt; from comma delimitered charactor.
+            </summary>
+            <param name="strArg">string that is separated by ",".</param>
+            <returns>List&lt;string&gt;</returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ResetFilter">
+            <summary>
+            reset filtering configuration.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.checkSubImageList">
+            <summary>
+            check Image by select
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.useMultiSelect">
+            <summary>
+            select use multiselect mode.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.selectedIndices">
+            <summary>
+            selected Indices
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.checkImageWidth">
+            <summary>
+            width of check Image by select
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.selectCheckImageUri">
+            <summary>
+            URI of check Image by select
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.useVisiblitySubImageCheckMark">
+            <summary>
+            set display/disable of all check Image by select
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.OnJFSelectionChanged(Jellyfish.jfDeepZoom.JFDeepZoomEventArgs)">
+            <summary>
+            It raises when the Selection Changed
+            </summary>
+            <param name="e">The <see cref="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.AddSelectedIndex(System.Int32)">
+            <summary>
+            add to SelectedIndex
+            </summary>
+            <param name="subImageIndex">Index of the subImage.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.AddSelectedIndexAt(System.Int32,System.Int32)">
+            <summary>
+            add to SelectedIndex(with the position set)
+            </summary>
+            <param name="subImageIndex">Index of the subImage.</param>
+            <param name="position">The position</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RemoveSelectedIndexAt(System.Int32)">
+            <summary>
+            remove index from SelectedIndices
+            </summary>
+            <param name="index">index of SelectedIndices </param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RemoveSelectedSubImageIndex(System.Int32)">
+            <summary>
+            remove index from SelectedIndices (specify Index of MultiScaleSubImage)
+            </summary>
+            <param name="subImageIndex">MutiScaleSubImageのindex</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.RemoveAllSelectedIndex">
+            <summary>
+            De-Select all Images
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.ConvertSubImageIndexToSelectedIndex(System.Int32)">
+            <summary>
+            Converts the index of the subImage index to selected Index.
+            </summary>
+            <param name="subImageIndex">Index of the subImage.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.addSubCheckImageMark(System.Int32)">
+            <summary>
+            Add check Image by select
+            </summary>
+            <param name="inIndex">Index of SubImage</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.deleteSubCheckImageMark(System.Int32)">
+            <summary>
+            remove check Image by select
+            </summary>
+            <param name="inIndex">Index of SubImage</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.syncSubImageCheckMark">
+            <summary>
+            sync subImage and check Image by select
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.isWithinRangeImage(System.Windows.Controls.Image)">
+            <summary>
+            specified Image within MultiScaleImage or not
+            </summary>
+            <param name="inImg">SelectedImage</param>
+            <returns>
+            	<c>true</c> if is within range MultiScaleImage; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.SetVisiblitySubImageCheckMark(System.Boolean)">
+            <summary>
+            set display/disable of all check Image by select
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.removeAllSubImageCheckMark">
+            <summary>
+             remove all check Image by select
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoom.normalCode">
+            <summary>
+            Normal code of communication
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.DynamicDownloadStringCompleted(System.String)">
+            <summary>
+            It called, when the communication for dynamic approach is completed. 
+            </summary>
+            <param name="xmlstr">Return xml from server</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoom.Send(System.String,System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.String}},System.String,System.String,System.String)">
+            <summary>
+            Send data("GET" from Silverlight. Return Metadata.xml and file path of dzc.).
+            </summary>
+            <param name="uri">Uri of API.</param>
+            <param name="dataList">It contains one column for each index of list.
+            dataList[index]["column name"]["value"]</param>
+            <param name="order">order</param>
+            <param name="orderby">orderby (asc / desc)</param>
+            <param name="searchType">Type of search (and / or)</param>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.LastMousePos">
+            <summary>
+            current mouse position
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.EndThreshold">
+            <summary>
+            the threshold for layout modifying as completed
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.CurrentLayoutStyle">
+            <summary>
+            current layout style
+            line, tile, snowCrystal, spiral, spread, defaultPosition, custom, none
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.CurrentMouseEventType">
+            <summary>
+            set mouse Event type
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.IsSelectable">
+            <summary>
+            decide subImage is selectable or not
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.MsiLen">
+            <summary>
+            number of total subimage including display and disable status.
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.MinZoom">
+            <summary>
+            minimum of zoom value.<br />
+            default: 0(unlimited)
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.MaxZoom">
+            <summary>
+            maximum of zoom value.<br />
+            default: Double.MaxValue(unlimited)
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.ZoomValue">
+            <summary>
+            current zoom. basically 1/msi.ViewportWidth
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.ZoomRatio">
+            <summary>
+            zoom level value for "Zoom" method
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.CurrentSlideIndex">
+            <summary>
+            Index value that is using for slideshow
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoomChangeStarted">
+            <summary>
+            event handler for starting animation for DeepZoom
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoomMotionFinished">
+            <summary>
+            event handler for completing animation for DeepZoom
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.SemiDynamicColList">
+            <summary>
+            List of collection and layout that get from server with SemiDynamic approach.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDownloadSemiDynamicListCompleted">
+            <summary>
+            It calls when load the "List" of SemiDynamic is completed.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFSemiDynamicLayoutChangeCompleted">
+            <summary>
+            It calls when load the "Custom Layout" of SemiDynamic is completed.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.MultiScaleSubImageMouseEnter">
+            <summary>
+            It calls when MouserEnter in paticular MultiScaleSubImage.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.MultiScaleSubImageMouseMove">
+            <summary>
+            It calls when MouseMove in paticular MultiScaleSubImage.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.MultiScaleSubImageMouseLeftButtonDown">
+            <summary>
+            It calls when MouseLeftButtonDown in paticular MultiScaleSubImage.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.MultiScaleSubImageMouseLeftButtonUp">
+            <summary>
+            It calls when MouseLeftButtonUp in paticular MultiScaleSubImage.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.MultiScaleSubImageMouseLeave">
+            <summary>
+            It calls when MouseLeave in paticular MultiScaleSubImage.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.MultiScaleSubImageTick">
+            <summary>
+            When it is auto playing slideshow, event is raised just before moving.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.Opacity0Completed">
+            <summary>
+            Event that is raised when subImage is disable with opecity 0.
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.ForegroundCanvas">
+            <summary>
+            foreground Canvas of JFDeepZoom
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.BackgroundCanvas">
+            <summary>
+            background Canvas of JFDeepZoom
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.Msi">
+            <summary>
+            reference of MultiScaleImage for JFDeepZoom
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.ShowSlideButtonZoomValue">
+            <summary>
+             the threshold for display Next/Previous button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.PreviousButton">
+            <summary>
+            Previous Button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.NextButton">
+            <summary>
+            Next Button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.PreviousButtonTemplate">
+            <summary>
+            Template of Previous Button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.NextButtonTemplate">
+            <summary>
+            Template of Next Button in JFDeepZoom
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoomPrevious">
+            <summary>
+            It calls when click the Previous Button.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoomNext">
+            <summary>
+            It calls when click the Next Button.
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.Src">
+            <summary>
+            Uri for dzc of MultiScaleImage.
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.CurrentApproachType">
+            <summary>
+            Getter / Setter for the type of the current approach(e.g. "Static", "Semi-Dynamic", "Dynamic").
+            </summary>
+            <value>The type of the current approach.</value>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoomSrcLoaded">
+            <summary>
+            It call when Source of MultiScaleImage is set and file loading is completed.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoomSrcIsNull">
+            <summary>
+            This event is called if Src property is null.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDeepZoomSrcIsOverLimit">
+            <summary>
+            This event is called if Src property exceeds the limit.
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDownloadStringCompleted">
+            <summary>
+            It call when DownloadStringCompleted event of the WebClient
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFDownloadProgressChanged">
+            <summary>
+            It call when DownloadProgressChanged event of the WebClient
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFOpenReadCompleted">
+            <summary>
+            It call when OpenReadCompleted event of the WebClient
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFOpenWriteCompleted">
+            <summary>
+            It call when OpenWriteCompleted event of the WebClient
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFUploadProgressChanged">
+            <summary>
+            It call when UploadProgressChanged event of the WebClient
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFUploadStringCompleted">
+            <summary>
+            It call when UploadStringCompleted event of the WebClient
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.LineTileSpace">
+            <summary>
+            Margin that is used "Line" Layout and "Tile" Layout
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.LineTileBasisIndex">
+            <summary>
+            Decide which index does set as standard for "Line" Layout and "Tile" Layout
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.TileBasisRatio">
+            <summary>
+            With "Tile" Layout, decide what time to wrap with standard image.
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.Indices">
+            <summary>
+            Display Indeices
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.Items">
+            <summary>
+            Display Items (reference of MultiScaleSubImage) <br />
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.FilterCompleted">
+            <summary>
+            It calls when Filter animation is completed
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.UseMultiSelect">
+            <summary>
+            permit multi select or not
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.SelectedIndices">
+            <summary>
+            selected Indices
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.SelectedItems">
+            <summary>
+            reference of List of Selected SubImage
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.CheckImageWidth">
+            <summary>
+            width of check Image by select
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoom.SelectCheckImageUri">
+            <summary>
+            URI of check Image by select
+            </summary>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.JFDeepZoom.JFSelectionChanged">
+            <summary>
+            It calls when the Selection Changed
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFThumbnailList">
+            <summary>
+            Stored Data of ThumbnailList
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFThumbnailList.thumbnailPath">
+            <summary>
+            Thumbnail file name
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFThumbnailList.pathIndex">
+            <summary>
+            Index of SubImage
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFThumbnailList.ThumbnailPath">
+            <summary>
+            Thumbnail file name
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFThumbnailList.PathIndex">
+            <summary>
+            Index of SubImage
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFSemiDynamicColList">
+            <summary>
+            Stored Data of One of List for SemiDynamic Approach
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFSemiDynamicColList.collectionId">
+            <summary>
+            collection id of List
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFSemiDynamicColList.cId">
+            <summary>
+            collection id of dzc
+            </summary>
+            <value>The CId.</value>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFSemiDynamicColList.cUrl">
+            <summary>
+            Collection URL.
+            </summary>
+            <value>The Collection URL.</value>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFSemiDynamicColList.cTitle">
+            <summary>
+            Collection title.
+            </summary>
+            <value>The Collection title.</value>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFSemiDynamicColList.lId">
+            <summary>
+            Layout ID.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFSemiDynamicColList.lUrl">
+            <summary>
+            Layout URL.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFSemiDynamicColList.lTitle">
+            <summary>
+            Layout title.
+            </summary>
+            <value>title.</value>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFSemiDynamicColList.isDefault">
+            <summary>
+            Layout is "Default Layout" or not
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFSemiDynamicColList.CollectionId">
+            <summary>
+            collection id of List
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFSemiDynamicColList.CId">
+            <summary>
+            collection id of dzc
+            </summary>
+            <value>The CId.</value>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFSemiDynamicColList.CUrl">
+            <summary>
+            Collection URL.
+            </summary>
+            <value>The Collection URL.</value>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFSemiDynamicColList.CTitle">
+            <summary>
+            Collection title.
+            </summary>
+            <value>The Collection title.</value>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFSemiDynamicColList.LId">
+            <summary>
+            Layout ID.
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFSemiDynamicColList.LUrl">
+            <summary>
+            Layout URL.
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFSemiDynamicColList.LTitle">
+            <summary>
+            Layout title.
+            </summary>
+            <value>title.</value>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFSemiDynamicColList.IsDefault">
+            <summary>
+            Layout is "Default Layout" or not
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.SearchCondition">
+            <summary>
+            This class defines Search Condition.<br />
+            And , Or.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SearchCondition.AND">
+            <summary>
+            And
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SearchCondition.OR">
+            <summary>
+            Or
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.ApproachType">
+            <summary>
+            This class is to define several approach DeepZoom.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.ApproachType.SEMI_DYNAMIC">
+            <summary>
+            semi-dynamic approach
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.ApproachType.DYNAMIC">
+            <summary>
+            dynamic approach
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.ApproachType.STATIC">
+            <summary>
+            static approach
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.FilterObject">
+            <summary>
+            Object using Filter.
+            contains
+              FilterKey
+              FilterValue
+              filterOperation
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.FilterObject.filterKey">
+            <summary>
+            value of FilterKey
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.FilterObject.filterValue">
+            <summary>
+            value of FilterValue
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.FilterObject.filterOperation">
+            <summary>
+            Operation kind using Filter
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.FilterObject.FilterKey">
+            <summary>
+            value of FilterKey
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.FilterObject.FilterValue">
+            <summary>
+            value of FilterValue
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.FilterObject.FilterOperation">
+            <summary>
+            Operation kind using Filter
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.FilterOperationType">
+            <summary>
+            Filter operation type
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.FilterOperationType.OPERATION_EQUAL">
+            <summary>
+            in case of "equal"
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.FilterOperationType.OPERATION_LESSTHAN">
+            <summary>
+            in case of "&lt;"
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.FilterOperationType.OPERATION_GREATERTHAN">
+            <summary>
+            in case of "&gt;"
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.FilterOperationType.OPERATION_CONTAIN">
+            <summary>
+            in case of "contain"
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.MouseWheelEventArgs">
+            <summary>
+            Event MouseWheel
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.MouseWheelEventArgs.#ctor(System.Double)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="delta"></param>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.MouseWheelEventArgs.Delta">
+            <summary>
+            movement of MouseWheel
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.MouseWheelEventArgs.Handled">
+            <summary>
+            Handled
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.MouseWheelHelper">
+            <summary>
+            MouseWheelHelper
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.MouseWheelHelper.#ctor(System.Windows.FrameworkElement)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="element">FrameworkElement</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.MouseWheelHelper.HandleMouseWheel(System.Object,Jellyfish.jfDeepZoom.MouseWheelEventArgs)">
+            <summary>
+            Handles the mouse wheel.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="args">The <see cref="T:Jellyfish.jfDeepZoom.MouseWheelEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.MouseWheelHelper.Moved">
+            <summary>
+            It raised when MouseWheel Move
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.LayoutStyle">
+            <summary>
+            This class is to define several layout style.<br />
+            
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.NONE">
+            <summary>
+            NONE layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.LINE">
+            <summary>
+            LINE layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.SNOW_CRYSTAL">
+            <summary>
+            SNOW_CRYSTAL layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.SPIRAL">
+            <summary>
+            SPIRAL layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.SPREAD">
+            <summary>
+            SPREAD layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.TILE">
+            <summary>
+            TILE layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.FIT">
+            <summary>
+            FIT layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.DEFAULT_POSITION">
+            <summary>
+            DEFAULT_POSITION layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.CUSTOM">
+            <summary>
+            CUSTOM layoutstyle
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.LayoutStyle.SHRINK">
+            <summary>
+            SHRINK layoutstyle
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.MultiScaleSubImageEventHandler">
+            <summary>
+            Event handler for MultiScaleSubImage
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The instance containing the event data.</param>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFDeepZoomEventHandler">
+            <summary>
+            Event handler for JFDeepZoom
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The instance containing the event data.</param>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFCommunicationEventHandler">
+            <summary>
+            Event handler for Communication of JFDeepZoom
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The instance containing the event data.</param>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFCommunicationErrorEventHandler">
+            <summary>
+            Event handler for Communication Error of JFDeepZoomJFDeepZoom
+            </summary>
+            <param name="sender">Sender of the event.</param>
+            <param name="e">The instance containing the event data.</param>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFDeepZoomMultiScaleImageException">
+            <summary>
+            This class is to clarify programs having a problem of MultiScaleImage.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoomMultiScaleImageException.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.SortOrder">
+            <summary>
+            Configuration SortOrder  
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SortOrder.ASC">
+            <summary>
+            ASC
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SortOrder.DESC">
+            <summary>
+            DESC
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.IndicesList">
+            <summary>
+            Display List that stores Index Of SubImage.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.Reverse">
+            <summary>
+            Reverse. [override]
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.Reverse(System.Int32,System.Int32)">
+            <summary>
+            Override. Reverse.
+            </summary>
+            <param name="index">index of the range to reverse.</param>
+            <param name="count">The number of elements in the range to reverse.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Override. RemoveRange
+            </summary>
+            <param name="index">index of the range of elements to remove.</param>
+            <param name="count">The number of elements to remove.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.Clear">
+            <summary>
+            Override. Remove all data.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.Add(System.Int32)">
+            <summary>
+            Override. Add data.
+            </summary>
+            <param name="index">Index of SubImage</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.Add(System.Int32,System.Boolean)">
+            <summary>
+            Adds the specified index.
+            </summary>
+            <param name="index">Index of SubImage</param>
+            <param name="callEvent">if set to <c>true</c> execute Add Method</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.RemoveAt(System.Int32)">
+            <summary>
+            Override. Remove specified index.
+            </summary>
+            <param name="index">index of the element to remove.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.SwapObject(Jellyfish.jfDeepZoom.IndicesList)">
+            <summary>
+            Swap Indices
+            </summary>
+            <param name="obj">target object</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Int32)">
+            <summary>
+            It raises when Collection Changed.
+            </summary>
+            <param name="action">NotifyCollectionChangedAction</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.IndicesList.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction)">
+            <summary>
+            It raises when Collection Changed.
+            </summary>
+            <param name="action">NotifyCollectionChangedAction</param>
+        </member>
+        <member name="E:Jellyfish.jfDeepZoom.IndicesList.CollectionChanged">
+            <summary>
+            It calles when Collection Changed.
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFDeepZoomSubImageException">
+            <summary>
+            This class is to clarify programs having a problem of SubImages.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoomSubImageException.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="message">The error message..</param>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.SemiDynamicExecType">
+            <summary>
+            This class is to define several SemiDynamicExecType.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SemiDynamicExecType.NONE">
+            <summary>
+            NO execution
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SemiDynamicExecType.LIST">
+            <summary>
+            execution for LIST
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SemiDynamicExecType.INIT">
+            <summary>
+            execution for INIT
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SemiDynamicExecType.INIT_CHANGE_ORDER">
+            <summary>
+            execution for INIT_CHANGE_ORDER
+            (Change order ThumbnailList, ascending order in DZC)
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SemiDynamicExecType.CHANGE_LAYOUT">
+            <summary>
+            execution for CHANGE_LAYOUT
+            （Load dzcPath in XML as string, and layout by client side.）
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.SemiDynamicExecType.LAYOUT">
+            <summary>
+            execution for LAYOUT
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFCommunicationEventArgs">
+            <summary>
+            EventArgs of Communication for JFDeepZoom<br />
+            This class is essential for communication event.
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFCommunicationEventArgs.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs">
+            <summary>
+            EventArgs of JFDeepZoom
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs.msi">
+            <summary>
+            MultiScaleImage
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs.#ctor(System.Windows.Controls.MultiScaleImage)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="_msi">MultiScaleImage</param>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFDeepZoomEventArgs.Msi">
+            <summary>
+            reference to MultiScaleImage object in JFDeepZoom
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.MouseEventType">
+            <summary>
+            This class is to define several subImage's click behavior.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.MouseEventType.NONE">
+            <summary>
+            NO execution
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.MouseEventType.EVENT_ONLY">
+            <summary>
+            only raise event 
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.MouseEventType.ZOOM">
+            <summary>
+            When Click SubImage, raise event and Zoom specified SubImage 
+            </summary>
+        </member>
+        <member name="T:Jellyfish.jfDeepZoom.JFCommunicationErrorEventArgs">
+            <summary>
+            EventArgs of Communication Error for JFDeepZoom
+            </summary>
+        </member>
+        <member name="M:Jellyfish.jfDeepZoom.JFCommunicationErrorEventArgs.#ctor(System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFCommunicationErrorEventArgs.code">
+            <summary>
+            ErrorCode
+            </summary>
+        </member>
+        <member name="F:Jellyfish.jfDeepZoom.JFCommunicationErrorEventArgs.description">
+            <summary>
+            ErrorDescription
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFCommunicationErrorEventArgs.Code">
+            <summary>
+            ErrorCode
+            </summary>
+        </member>
+        <member name="P:Jellyfish.jfDeepZoom.JFCommunicationErrorEventArgs.Description">
+            <summary>
+            ErrorDescription
+            </summary>
+        </member>
+    </members>
+</doc>

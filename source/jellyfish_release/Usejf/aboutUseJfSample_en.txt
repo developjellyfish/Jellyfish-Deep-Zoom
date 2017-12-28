@@ -1,0 +1,103 @@
+﻿Explanation of our sample project, "UseJf"
+
+/***************************************************************************/
+[The way to display Loading status]
+
+	1. Set EventHandler.
+	2. Write programs and controls using logic like "Now Loading" when JFDeepZoom.Send() method is called.
+	3. 2 events are called when searching is finished.
+	2 events are :
+	   1: JFDeepZoomSrcLoaded
+	   	This event is called when the MultiScaleImage object in JFDeepZoom has finished loading new JFDeepZoom.Src file.
+	   2: JFDeepZoomSrcIsNull
+	   	This event is called when new JFDeepZoom.Src does not exist. For example, search conditions are not enough.
+	4. Using each events (JFDeepZoomSrcLoaded, JFDeepZoomSrcIsNull), display the status loading complete.
+
+
+In our sample project "UseJf",I wrote 2 TextBlock and 2 Storyboard objects in XAML.
+	
+	These are:
+	loading_tb: This is the TextBlock object displaying while JFDeepZoom loading new Src.
+	loading_sb: This is the storyboard object used by loading_tb.
+	
+	loadComplete_tb: This is the TextBlock object displaying when JFDeepZoom has finished loading complete.
+	loadComplete_sb: This is the storyboard object used by loadComplete_tb.
+
+
+Flow:
+	Call JFDeepZoom.Send() method:
+	1. Displaying loading_tb, then start loading_sb.
+	2. This storyboard is set that animation repeats when loading is done.
+	3. Displaying loadComplete_tb and then starting loadComplete_sb when loading is done.
+	4. Setting loadComplete_tb.Visibility to "Visibility.Collapsed" when loading is done.
+	
+	*1 You can write TextBlock and Storyboard (for displaying loading status) in XAML file.
+	*2 set loading_tb.Visibility and loadComplete_tb.Visibility to Visibility.Collapsed.
+	
+
+[in our sample code (in Page.xaml.cs)]
+	1. Set event handler
+	
+	2. Displaying loading_tb when JFDeepZoom.Send() method is called.( sample code is setLoading method in Page.xaml.cs)
+	
+	[sample code]
+	private void setLoading()
+	{
+	    loading_sb.RepeatBehavior = RepeatBehavior.Forever;
+	    loading_sb.Begin();
+	}
+	
+	3.&4. displaying "Load complete" when loading is done.( sample code is jfd_JFDeepZoomSrcLoaded method in Page.xaml.cs)
+	
+	[sample code]
+	loading_tb.Visibility = Visibility.Collapsed;
+	loadComplete_tb.Visibility = Visibility.Visible;
+	loadComplete_sb.Completed += new EventHandler(loadComplete_sb_Completed);
+	loadComplete_sb.Begin();
+	
+	void loadComplete_sb_Completed(object sender, EventArgs e)
+	{
+	    loadComplete_tb.Visibility = Visibility.Collapsed;
+	}
+
+/***************************************************************************/
+[To make us easy to syncronize thumbnails and MultiScaleSubImages, we created 2 methods to exchange between index number of MultiScaleSubImage and thumbnail file names]
+(Sample program is not written in current version of Jellyfish(2008/06/27).)
+
+	these 2 methods are below：
+		int ImageNameToIndex(string thumbnailName);
+		returning index number corresponding to MultiScaleSubImage from thumbnail filename.
+	
+		string IndexToImageName(int index);
+		returning thumbnail filename corresponding to MultiScaleSubImage from index number.
+		I think these 2 methods help us to be easy to syncronize between thumbnail images which exist outside JFDeepZoom and MultiScaleSubImages inside JFDeepZoom.
+		
+/***************************************************************************/
+[Search API] 
+public void Send(string uri, List<Dictionary><string,string>> dataList, string order, string orderby, string searchType)
+	Send data to specified uri with parameters within dataList.
+
+	1. string uri: send Uri
+
+	2. List<Dictionary><string,string>> dataList
+	strings for searching.
+	* One list index has one table.
+	* Dictionary objects are combinations that have "table name" and "search value".
+	
+	Sample program( line 101 to 113 in Page.xaml in UseJf project)
+	
+	// Dictionary objects are used each search conditions.(in this sample, we must 2 dictionary objects because we use 2 search conditions, "title" and "tags".)
+	Dictionary<string, string> table1 = new Dictionary<string, string>();
+	
+	// set table name and search value to dictionary object.
+	table1["condition1"] = title_tb.Text;
+	
+	// set search condition to dataList.
+	dataList.Add(table1);
+	
+	// set next search condition ( this sample is about "tag" information)
+	Dictionary<string, string> table2 = new Dictionary<string, string>();
+
+	// replace " " to "," in tag because we must set search condition of tag to "," separated.
+	table2["condition2"] = Regex.Replace(tag_tb.Text, @"(\s)+",",");
+	dataList.Add(table2);

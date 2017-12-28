@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DzcConverter</name>
+    </assembly>
+    <members>
+        <member name="M:DzcConverter.Program.Main(System.String[])">
+            <summary>
+            Mains the specified args.
+            </summary>
+            <param name="args">The args.</param>
+            <returns></returns>
+        </member>
+        <member name="T:DzcConverter.SeadragonImage">
+            <summary>
+            SeadragonImage Class
+            </summary>
+        </member>
+        <member name="F:DzcConverter.SeadragonImage.itemRect">
+            <summary>
+            itemRect
+            </summary>
+        </member>
+        <member name="F:DzcConverter.SeadragonImage.imagePath">
+            <summary>
+            imagePath
+            </summary>
+        </member>
+        <member name="M:DzcConverter.SeadragonImage.#ctor(System.Drawing.Point,System.String,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DzcConverter.SeadragonImage"/> class.
+            </summary>
+            <param name="ptOrg">The pt org.</param>
+            <param name="imagePath">The image path.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="T:DzcConverter.SeadragonImage.RECT">
+            <summary>
+            RECT struct
+            </summary>
+        </member>
+        <member name="F:DzcConverter.SeadragonImage.RECT.left">
+            <summary>
+            left
+            </summary>
+        </member>
+        <member name="F:DzcConverter.SeadragonImage.RECT.top">
+            <summary>
+            top
+            </summary>
+        </member>
+        <member name="F:DzcConverter.SeadragonImage.RECT.right">
+            <summary>
+            right
+            </summary>
+        </member>
+        <member name="F:DzcConverter.SeadragonImage.RECT.bottom">
+            <summary>
+            bottom
+            </summary>
+        </member>
+        <member name="T:DzcConverter.SeadragonExporter">
+            <summary>
+            SeadragonExporter Class
+            </summary>
+            <remarks>
+            For converting input images to SeadragonImages.
+            </remarks>
+        </member>
+        <member name="M:DzcConverter.SeadragonExporter.Export(System.String,System.Collections.Generic.List{DzcConverter.SeadragonImage},System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Exports the specified DZC output path.
+            </summary>
+            <param name="DzcOutputPath">The DZC output path.</param>
+            <param name="images">The images.</param>
+            <param name="viewPortWidth">Width of the view port.</param>
+            <param name="viewPortHeight">Height of the view port.</param>
+            <param name="tileSize">Size of the tile.</param>
+            <param name="imageCompression">The image compression.</param>
+            <param name="collectionXmlFile">The collection XML file.</param>
+            <param name="collectionImagesParentDirPath">The collection images parent dir path.</param>
+            <param name="collectionImagesDirPath">The collection images dir path.</param>
+        </member>
+    </members>
+</doc>

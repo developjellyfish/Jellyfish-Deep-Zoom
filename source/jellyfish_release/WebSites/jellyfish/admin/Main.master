@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="admin_Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Jellyfish Deep Zoom - Administration Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            height: 328px;
+        }
+        .style2
+        {
+            width: 100%;
+            height: 3px;
+        }
+        .style3
+        {
+            width: 211px;
+        }
+        .style4
+        {
+            width: 393px;
+        }
+        .style5
+        {
+            width: 150px;
+        height: 594px;
+      }
+        .style6
+        {
+            width: 100%;
+        }
+      .style7
+      {
+        height: 594px;
+      }
+    </style>
+</head>
+<body id="main_body" runat="server">
+    <form id="form1" runat="server">
+    <table class="style2">
+        <tr>
+            <td class="style4">
+                Login User : <asp:Label ID="lblUserName" runat="server" Text=""></asp:Label>
+            </td>
+            <td class="style3" align="center">
+                Administration</td>
+            <td align="right">
+                <asp:Button ID="btnLogout" runat="server" Text="Logout" 
+                    onclick="btnLogout_Click" Width="73px" />
+            </td>
+        </tr>
+    </table>
+    <table class="style1" border="1">
+        <tr>
+            <td align="center" class="style5" valign="top" width="150">
+                <table cellpadding="2" class="style6">
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton1" runat="server" onclick="LinkButton1_Click1">Home</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton2" runat="server" onclick="LinkButton2_Click">Upload Image</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton3" runat="server" onclick="LinkButton3_Click">Image Manager</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton4" runat="server" onclick="LinkButton4_Click">Collection Manager</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton5" runat="server" onclick="LinkButton5_Click">Upload Layout</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton6" runat="server" onclick="LinkButton6_Click">Layout Manager</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LinkButton7" runat="server" onclick="LinkButton7_Click">Deep Zoom Viewer</asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </td>
+            <td class="style7">
+                <div style="height: 598px; width: auto; overflow:auto;">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

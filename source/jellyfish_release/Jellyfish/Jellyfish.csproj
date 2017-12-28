@@ -1,0 +1,99 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE2BF671-284A-4E63-B6D5-AF2E8877E410}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jellyfish</RootNamespace>
+    <AssemblyName>Jellyfish</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>false</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>Bin\Debug\Jellyfish.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="jfDeepZoom\JFCommunicationErrorEvent.cs" />
+    <Compile Include="jfDeepZoom\JFCommunicationEvent.cs" />
+    <Compile Include="jfDeepZoom\JFDeepZoom.cs" />
+    <Compile Include="jfDeepZoom\ApproachType.cs" />
+    <Compile Include="jfDeepZoom\FilterObject.cs" />
+    <Compile Include="jfDeepZoom\JFDeepZoomMultiScaleImageException.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomInteractionUtilsPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomInteractionLayoutPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomCommunicationDynamicPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomCommunicationPartial.cs" />
+    <Compile Include="jfDeepZoom\JFSemiDynamicColList.cs" />
+    <Compile Include="jfDeepZoom\SearchCondition.cs" />
+    <Compile Include="jfDeepZoom\SemiDynamicExecType.cs" />
+    <Compile Include="jfDeepZoom\IndicesList.cs" />
+    <Compile Include="jfDeepZoom\JFDeepZoomEvent.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomDisplayIndicesPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomCommunicationSemiDynamicPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomException.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomInitPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomInteractionDoMethodPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomInteractionPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomMultiSelectPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomEventPartial.cs" />
+    <Compile Include="jfDeepZoom\jfDeepZoomPartial\JFDeepZoomUserControlPartial.cs" />
+    <Compile Include="jfDeepZoom\JFDeepZoomSubImageException.cs" />
+    <Compile Include="jfDeepZoom\JFThumbnailList.cs" />
+    <Compile Include="jfDeepZoom\LayoutStyle.cs" />
+    <Compile Include="jfDeepZoom\MouseWheelHelper.cs" />
+    <Compile Include="jfDeepZoom\MultiScaleSubImageEvent.cs" />
+    <Compile Include="jfDeepZoom\MouseEventType.cs" />
+    <Compile Include="jfDeepZoom\SortOrder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight\v2.0\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

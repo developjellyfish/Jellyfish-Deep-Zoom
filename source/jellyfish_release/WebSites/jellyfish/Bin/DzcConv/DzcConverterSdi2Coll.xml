@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DzcConverterSdi2Coll</name>
+    </assembly>
+    <members>
+        <member name="T:Sdi2Coll.Sdi2Coll">
+            <summary>
+            Sdi2Coll Class
+            </summary>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.PageIndexFromXY(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Pages the index from XY.
+            </summary>
+            <param name="xMorton">The x morton.</param>
+            <param name="yMorton">The y morton.</param>
+            <param name="level">The level.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.PagePositionFromXY(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Pages the position from XY.
+            </summary>
+            <param name="xMorton">The x morton.</param>
+            <param name="yMorton">The y morton.</param>
+            <param name="level">The level.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.XYToMorton(System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            XYs to morton.
+            </summary>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+            <param name="uMorton">The u morton.</param>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.MortonToXY(System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            Mortons to XY.
+            </summary>
+            <param name="uMorton">The u morton.</param>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.WriteCollection(Sdi2Coll.Sdi2Coll.SdiImage[],System.String,System.String,System.String)">
+            <summary>
+            Writes the collection.
+            </summary>
+            <param name="rgSdiImages">The rg SDI images.</param>
+            <param name="sCollOutputFolder">The s coll output folder.</param>
+            <param name="collectionXmlFile">The collection XML file.</param>
+            <param name="collectionImagesParentDirPath">The collection images parent dir path.</param>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.WriteCollection_Beta2(Sdi2Coll.Sdi2Coll.SdiCollectionImage[],System.String,System.String)">
+            <summary>
+            Write collection_files and collection.xml
+            </summary>
+            <param name="rgSdiCollImages"></param>
+            <param name="sCollMetadataXmlPath"></param>
+            <param name="collectionImagesParentDirPath"></param>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.WriteCollectionThumbnailsOnly(Sdi2Coll.Sdi2Coll.SdiCollectionImage[],System.String,System.String,System.String)">
+            <summary>
+            Writes the collection thumbnails only.
+            </summary>
+            <param name="rgSdiCollImages">The rg SDI coll images.</param>
+            <param name="sCollImagesFolderRel">The s coll images folder rel.</param>
+            <param name="sCollMetadataXmlPath">The s coll metadata XML path.</param>
+            <param name="collectionImagesParentDirPath">The collection images parent dir path.</param>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.WriteCollectionXml(Sdi2Coll.Sdi2Coll.SdiCollectionImage[],System.String,System.String,System.String)">
+            <summary>
+            Write collection.xml
+            </summary>
+            <param name="rgSdiCollImages"></param>
+            <param name="sCollXmlPath"></param>
+            <param name="sCollImagesFolder"></param>
+            <param name="collectionImagesParentDirPath"></param>
+        </member>
+        <member name="T:Sdi2Coll.Sdi2Coll.SdiImage">
+            <summary>
+            SdiImage
+            </summary>
+        </member>
+        <member name="F:Sdi2Coll.Sdi2Coll.SdiImage._sSdiPath">
+            <summary>
+            _sSdiPath
+            </summary>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.SdiImage.#ctor(System.String,System.Drawing.RectangleF)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sdi2Coll.Sdi2Coll.SdiImage"/> class.
+            </summary>
+            <param name="sSdiFolderPath">The s SDI folder path.</param>
+            <param name="rcfBounds">The RCF bounds.</param>
+        </member>
+        <member name="T:Sdi2Coll.Sdi2Coll.SdiCollectionImage">
+            <summary>
+            SdiCollectionImage
+            </summary>
+        </member>
+        <member name="F:Sdi2Coll.Sdi2Coll.SdiCollectionImage._nMorton">
+            <summary>
+            _nMorton
+            </summary>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.SdiCollectionImage.#ctor(Sdi2Coll.Sdi2Coll.SdiImage,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sdi2Coll.Sdi2Coll.SdiCollectionImage"/> class.
+            </summary>
+            <param name="sdiImage">The SDI image.</param>
+            <param name="nMorton">The n morton.</param>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.SdiCollectionImage.#ctor(System.String,System.Drawing.RectangleF,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Sdi2Coll.Sdi2Coll.SdiCollectionImage"/> class.
+            </summary>
+            <param name="sSdiFolderPath">The s SDI folder path.</param>
+            <param name="rcfBounds">The RCF bounds.</param>
+            <param name="nMorton">The n morton.</param>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.SdiCollectionImage.GetThumbnail_Beta1(System.Int32)">
+            <summary>
+            Gets the thumbnail_ beta1.
+            </summary>
+            <param name="iLevel">The i level.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdi2Coll.Sdi2Coll.SdiCollectionImage.GetThumbnail_Beta2(System.Int32)">
+            <summary>
+            Gets the thumbnail_ beta2.
+            </summary>
+            <param name="iLevel">The i level.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

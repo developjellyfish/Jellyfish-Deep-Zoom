@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Img2Sdi</name>
+    </assembly>
+    <members>
+        <member name="T:Img2Sdi.ItemsBin">
+            <summary>
+            ItemsBin Class
+            </summary>
+        </member>
+        <member name="M:Img2Sdi.ItemsBin.Load(System.String)">
+            <summary>
+            Loads the specified s info bin path.
+            </summary>
+            <param name="sInfoBinPath">The s info bin path.</param>
+        </member>
+        <member name="M:Img2Sdi.ItemsBin.Save(System.String)">
+            <summary>
+            Saves the specified s info bin dest path.
+            </summary>
+            <param name="sInfoBinDestPath">The s info bin dest path.</param>
+        </member>
+        <member name="M:Img2Sdi.ItemsBin.FilterSortedItems(System.String[])">
+            <summary>
+            Filters the sorted items.
+            </summary>
+            <param name="rgItemPaths">The rg item paths.</param>
+        </member>
+        <member name="M:Img2Sdi.ItemsBin.GetItemPaths">
+            <summary>
+            Gets the item paths.
+            </summary>
+            <returns>string[]</returns>
+        </member>
+        <member name="T:Img2Sdi.HeaderBlock">
+            <summary>
+            HeaderBlock Class
+            </summary>
+        </member>
+        <member name="M:Img2Sdi.HeaderBlock.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Img2Sdi.HeaderBlock"/> class.
+            </summary>
+        </member>
+        <member name="M:Img2Sdi.HeaderBlock.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Img2Sdi.HeaderBlock"/> class.
+            </summary>
+            <param name="logicalWidth">Width of the logical.</param>
+            <param name="logicalHeight">Height of the logical.</param>
+        </member>
+        <member name="T:Img2Sdi.LevelBlock">
+            <summary>
+            LevelBlock Class
+            </summary>
+        </member>
+        <member name="M:Img2Sdi.LevelBlock.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Img2Sdi.LevelBlock"/> class.
+            </summary>
+        </member>
+        <member name="M:Img2Sdi.LevelBlock.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Img2Sdi.LevelBlock"/> class.
+            </summary>
+            <param name="levelWidth">Width of the level.</param>
+            <param name="levelHeight">Height of the level.</param>
+            <param name="tileSize">Size of the tile.</param>
+        </member>
+        <member name="T:Img2Sdi.Img2Sdi">
+            <summary>
+            Img2Sdi Class
+            </summary>
+        </member>
+        <member name="M:Img2Sdi.Img2Sdi.ReadInfoBin(System.String,Img2Sdi.HeaderBlock@,Img2Sdi.LevelBlock[]@)">
+            <summary>
+            Reads the info bin.
+            </summary>
+            <param name="sInfoBinPath">The s info bin path.</param>
+            <param name="header">The header.</param>
+            <param name="rgLevels">The rg levels.</param>
+        </member>
+        <member name="M:Img2Sdi.Img2Sdi.WriteInfoBin(System.String,Img2Sdi.HeaderBlock,Img2Sdi.LevelBlock[])">
+            <summary>
+            Writes the info bin.
+            </summary>
+            <param name="sInfoBinPath">The s info bin path.</param>
+            <param name="hb">The hb.</param>
+            <param name="rgLevels">The rg levels.</param>
+        </member>
+        <member name="M:Img2Sdi.Img2Sdi.Image2Sdi_Beta1(System.String,System.String)">
+            <summary>
+            Image2s the sdi_ beta1.
+            </summary>
+            <param name="sInputImage">The s input image.</param>
+            <param name="sSdiOutputPath">The s SDI output path.</param>
+        </member>
+        <member name="M:Img2Sdi.Img2Sdi.WriteImageXml(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Writes the image XML.
+            </summary>
+            <param name="sInputImage">The s input image.</param>
+            <param name="sXmlOutputPath">The s XML output path.</param>
+            <param name="nImageWidth">Width of the n image.</param>
+            <param name="nImageHeight">Height of the n image.</param>
+            <param name="nTileSize">Size of the n tile.</param>
+            <param name="nTileOverlap">The n tile overlap.</param>
+        </member>
+        <member name="M:Img2Sdi.Img2Sdi.Image2Sdi_Beta2(System.String,System.String)">
+            <summary>
+            Image2s the sdi_ beta2.
+            </summary>
+            <param name="sInputImage">The s input image.</param>
+            <param name="sXmlOutputPath">The s XML output path.</param>
+        </member>
+        <member name="M:Img2Sdi.Img2Sdi.ScaleImage(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            Scales the image.
+            </summary>
+            <param name="imageSource">The image source.</param>
+            <param name="nScaledWidth">Width of the n scaled.</param>
+            <param name="nScaledHeight">Height of the n scaled.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Img2Sdi.Img2Sdi.WriteLevel(System.Drawing.Bitmap,System.Int32,System.String)">
+            <summary>
+            Writes the level.
+            </summary>
+            <param name="imgLod">The img lod.</param>
+            <param name="nTileSize">Size of the n tile.</param>
+            <param name="sLevelTileFolder">The s level tile folder.</param>
+        </member>
+    </members>
+</doc>

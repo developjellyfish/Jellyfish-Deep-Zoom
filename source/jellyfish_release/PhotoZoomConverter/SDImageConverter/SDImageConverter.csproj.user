@@ -1,0 +1,5 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartArguments>\\jscratch\scratch\a-islama\400CollectionImages c:\output 256 90 0 0</StartArguments>
+  </PropertyGroup>
+</Project>
