@@ -18,7 +18,7 @@ We hope that helps !
 
 
 ## ReleaseNote
-update 2010/4/15 ------------------------------------
+### update 2010/4/15 
 There was a bug in the Jellyfish server side DZC (DeepZoomCollection) generation code. When viewing a composition through a Silverlight 4 client, the image resolution would not update after zooming in. Prior versions of Silverlight were unaffected.
 
 The code that creates the collection.xml file was generating incorrect values for the image width and height attributes for the original image data.
@@ -28,7 +28,7 @@ http://jellyfishdz.codeplex.com/SourceControl/list/changesets
 
 Special thanks to DanCory for pointing out the error in the source code and providing a patch. 
 
-------------------------------------
+### update after MIX09
 As we promised at our session of MIX09, now we'd like to release 1.1 beta of Jellyfish Deep Zoom.
 
 Please check our session recording and PowerPoint file about Jellyfish for your better understanding.
@@ -51,7 +51,7 @@ this.RootVisual = new Step10_Dynamic();
 
 You can switch by removing commented out //.
 
---- install ----------------
+## install 
 1) Please download from "Downloads & Files" of "Jellyfish Deep Zoom 1.0 "
 http://jellyfishdz.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=18362
 
@@ -90,7 +90,7 @@ For web adminitrator, set "Start Page" to "jellyfishDZApp.Web\admin\Default.aspx
 
 11) Hit F5 please !
 
---- about source code ----------------
+### about source code
 DzcConverter
 (Bin\DzcConv\DzcConverter.exe, DzcConverterImg2Sdi.dll, DzcConverterSdi2Coll.dll)
 and PhotoZoomConverter
