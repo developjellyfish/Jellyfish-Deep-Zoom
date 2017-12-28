@@ -1,3 +1,8 @@
+## At First
+This Project moved from CodePlex. 
+and, I'm sorry about it is not maintaining.
+http://jellyfishdz.codeplex.com/
+
 ## Summary
 Jellyfish Deep Zoom is open source toolkit for dynamic deep zoom application using for silverlight development that oriented to most of system integrators and web agencies.
 
